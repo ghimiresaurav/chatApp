@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viper</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/common.css" />
+    <script
+      src="https://kit.fontawesome.com/be6fe7c971.js"
+      crossorigin="anonymous"
+    ></script>
+    <style></style>
+  </head>
+  <body>
+    <div id="index-body">
+      <header>
+        <div class="header-child" id="logo">
+          <h1>Viper</h1>
+          <i class="far fa-comment"></i>
+        </div>
+      </header>
+
+      <div class="main">
+        <div id="container">
+          <form
+            class="index-form"
+            action="/create-room"
+            method="POST"
+            id="create-room-form"
+          >
+            <input
+              class="index-input"
+              type="text"
+              name="title"
+              placeholder="Enter New Room's Name"
+              required
+            />
+            <input
+              class="index-input"
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              required
+            />
+            <button type="submit" class="room-btn">Create Room</button>
+          </form>
+
+          <form
+            class="index-form"
+            id="join-room-form"
+            onsubmit="joinChatRoom(event)"
+          >
+            <input
+              class="index-input"
+              id="user-name"
+              type="text"
+              name="name"
+              placeholder="Join As"
+              required
+            />
+            <input
+              class="index-input"
+              id="user-room"
+              type="text"
+              name="title"
+              placeholder="Enter Room's Name"
+              required
+            />
+            <input
+              class="index-input"
+              id="room-password"
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              required
+            />
+            <button type="submit" class="room-btn">Join Room</button>
+          </form>
+
+          <button class="room-btn room" onclick="createRoom()">
+            Create Room
+          </button>
+          <button class="room-btn room" onclick="joinRoom()">Join Room</button>
+        </div>
+      </div>
+    </div>
+    <div id="chat-field-body">
+      <header>
+        <div class="header-child" id="logo">
+          <h1>Viper</h1>
+          <i class="far fa-comment"></i>
+        </div>
+        <div class="header-child" id="current-user-card">
+          <i class="fas fa-user-circle"></i>
+          <h2 id="current-user"></h2>
+        </div>
+      </header>
+
+      <div class="main">
+        <div id="left-pane">
+          <br />
+          <span class="details">Room:</span>
+          <div id="room-name" class="cards"></div>
+          <br />
+          <br />
+          <span class="details">Users</span>
+          <i class="fas fa-users"></i>
+        </div>
+        <div id="message-wrapper"></div>
+      </div>
+
+      <form action="" id="message-input">
+        <input
+          class="chat-input"
+          type="text"
+          name="message"
+          id="msg"
+          placeholder="Enter Message"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="send-btn">
+          <i class="fas fa-paper-plane"></i> Send
+        </button>
+      </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

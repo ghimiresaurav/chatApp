@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 300ms;
+}
+
+body {
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#index-body,
+#chat-field-body {
+  top: inherit;
+  left: inherit;
+  height: 100vh;
+  width: 100vw;
+}
+
+#chat-field-body {
+  display: hidden;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 8vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-child {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo {
+  width: 15%;
+}
+
+.fa-comment,
+.fa-user-circle {
+  font-size: 35px;
+  margin: 10px;
+}
+
+#current-user-card {
+  width: 25%;
+}
+
+#current-user {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.main {
+  margin-top: 8vh;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+}
+
+#left-pane {
+  font-family: "Montserrat", sans-serif;
+  width: 20%;
+  border-right: 2px solid royalblue;
+  margin-right: 25px;
+  height: 80vh;
+}
+
+.details {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 10px;
+}
+
+.cards {
+  position: relative;
+  font-size: 20px;
+  margin: 20px 30px;
+}
+
+#message-wrapper {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 80%;
+  height: 80vh;
+}
+
+.message {
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgb(68, 68, 73);
+  min-width: 200px;
+  max-width: 90%;
+}
+
+.user-name {
+  /* color: rgb(50, 50, 233); */
+  color: #8fd3fe;
+}
+
+.bot-name {
+  color: yellow;
+}
+
+.fa-robot {
+  color: darkturquoise;
+}
+
+.time {
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+#message-input {
+  width: 100vw;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+  padding: 0 5px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-bottom: 2px solid royalblue;
+}
+
+input:focus {
+  border-bottom: 2px solid darkcyan;
+}
+
+#container {
+  height: 175px;
+  width: 350px;
+  background-color: #2f343a;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 40px;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#send-btn {
+  font-size: 15px;
+  margin-left: 10px;
+  height: 30px;
+  color: royalblue;
+  border-radius: 15px;
+}
+
+.room-btn {
+  font-size: 20px;
+  width: 90%;
+  height: 40px;
+  background-color: #2f343a;
+  border-radius: 5px;
+  color: #8fd3fe;
+}
+
+.room-btn:hover {
+  color: royalblue;
+  background-color: #1f2229;
+}
+
+form {
+  width: inherit;
+  height: inherit;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  flex-direction: inherit;
+}
+
+#logout-btn {
+  position: absolute;
+  right: 20px;
+}
+
+.chat-input {
+  font-size: 15px;
+  height: 30px;
+  width: 80%;
+}
+.main {
+  align-items: center;
+  justify-content: center;
+}
+
+.index-input {
+  font-size: 16px;
+  height: 35px;
+  width: 90%;
+}
+
+.index-form {
+  display: none;
+}
