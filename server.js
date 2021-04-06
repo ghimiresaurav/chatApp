@@ -5,6 +5,8 @@ const mysql = require("mysql");
 const bcrypt = require("bcrypt");
 const http = require("http");
 const socketio = require("socket.io");
+const mysqldump = require("mysqldump");
+
 const {
   newUser,
   getCurrentUser,
@@ -61,7 +63,7 @@ io.on("connection", (socket) => {
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: "saurav",
+  user: "root",
   password: "123456",
   database: "chatrooms",
   insecureAuth: true,
@@ -78,6 +80,15 @@ app.post("/create-room", async (req, res) => {
     if (err) throw err;
     const sql = `INSERT INTO rooms(title, password) VALUES('${room.title}', '${hashedPassword}')`;
     db.query(sql);
+    mysqldump({
+      connection: {
+        host: "localhost",
+        user: "root",
+        password: "123456",
+        database: "chatrooms",
+      },
+      dumpToFile: "database_dump.txt",
+    });
   });
   return res.redirect("/");
 });
@@ -115,11 +126,6 @@ const PORT = process.env.PORT || 5000;
 server.listen(PORT, () =>
   console.log(chalk.magenta(`SERVER STARTED ON PORT ${PORT}`))
 );
-
-// JavaScript console.log
-// python the_what
-// c denis
-// JS cl
 
 const formatMessage = (uname, text) => {
   let hours = new Date().getHours();
