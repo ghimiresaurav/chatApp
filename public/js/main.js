@@ -51,7 +51,9 @@ const joinChatRoom = (e) => {
     loadChatPage();
     let { name, room } = user;
 
-    document.getElementById("current-user").innerText = name;
+    document.getElementById(
+      "current-user-card"
+    ).innerHTML = `<i class="fas fa-user-circle"></i><h2 id="current-user">${name}</h2>`;
     document.getElementById("room-name").innerText = room;
     sessionStorage.setItem("username", name);
     socket.emit("joinRoom", { username: name, room });
