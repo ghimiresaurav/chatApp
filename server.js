@@ -123,11 +123,6 @@ server.listen(PORT, () =>
   console.log(chalk.magenta(`SERVER STARTED ON PORT ${PORT}`))
 );
 
-// JavaScript console.log
-// python the_what
-// c denis
-// JS cl
-
 const formatMessage = (uname, text) => {
   let hours = new Date().getHours();
   let minutes = new Date().getMinutes();
