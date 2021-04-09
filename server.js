@@ -63,14 +63,10 @@ io.on("connection", (socket) => {
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: "root",
+  user: "saurav",
   password: "123456",
   database: "chatrooms",
   insecureAuth: true,
-});
-
-app.get("/", (req, res) => {
-  res.send("index");
 });
 
 app.post("/create-room", async (req, res) => {
@@ -83,7 +79,7 @@ app.post("/create-room", async (req, res) => {
     mysqldump({
       connection: {
         host: "localhost",
-        user: "root",
+        user: "saurav",
         password: "123456",
         database: "chatrooms",
       },
@@ -126,6 +122,11 @@ const PORT = process.env.PORT || 5000;
 server.listen(PORT, () =>
   console.log(chalk.magenta(`SERVER STARTED ON PORT ${PORT}`))
 );
+
+// JavaScript console.log
+// python the_what
+// c denis
+// JS cl
 
 const formatMessage = (uname, text) => {
   let hours = new Date().getHours();
