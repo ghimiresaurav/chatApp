@@ -63,7 +63,7 @@ io.on("connection", (socket) => {
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: "saurav",
+  user: "gill",
   password: "123456",
   database: "chatrooms",
   insecureAuth: true,
@@ -79,7 +79,7 @@ app.post("/create-room", async (req, res) => {
     mysqldump({
       connection: {
         host: "localhost",
-        user: "saurav",
+        user: "gill",
         password: "123456",
         database: "chatrooms",
       },
